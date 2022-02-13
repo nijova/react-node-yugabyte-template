@@ -1,0 +1,25 @@
+{
+  "name": "react-node-yugabyte-template",
+  "version": "0.0.1",
+  "description": "A template to set up React with NodeJS and YugabyteDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nijova/react-node-yugabyte-template.git"
+  },
+  "keywords": [
+    "React",
+    "Yugabyte",
+    "NodeJS",
+    "Template"
+  ],
+  "author": "nijova",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nijova/react-node-yugabyte-template/issues"
+  },
+  "homepage": "https://github.com/nijova/react-node-yugabyte-template#readme"
+}
