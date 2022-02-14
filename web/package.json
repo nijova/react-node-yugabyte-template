@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/nijova/react-node-yugabyte-template/issues"
   },
-  "homepage": "https://github.com/nijova/react-node-yugabyte-template#readme"
+  "homepage": "https://github.com/nijova/react-node-yugabyte-template#readme",
+  "dependencies": {
+    "requirejs": "^2.3.6"
+  }
 }
