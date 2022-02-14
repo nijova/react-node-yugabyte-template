@@ -1,4 +1,4 @@
-class Root extends React.Component {  
+class Root extends React.Component {
   render() {
     return React.createElement(
       'h1',
@@ -7,5 +7,3 @@ class Root extends React.Component {
     );
   }
 }
-
-define(new Root());

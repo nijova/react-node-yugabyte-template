@@ -3,5 +3,4 @@ requirejs(['root'], function(required) {
 
   const root = document.querySelector('#root');
   ReactDOM.render(React.createElement(Root), root);
-
 });
