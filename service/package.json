@@ -1,0 +1,30 @@
+{
+  "name": "node-yugabyte",
+  "version": "0.0.1",
+  "description": "backend with yugabyte",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nijova/react-node-yugabyte-template.git"
+  },
+  "keywords": [
+    "node",
+    "yugabyte",
+    "client",
+    "backend"
+  ],
+  "author": "nijova",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nijova/react-node-yugabyte-template/issues"
+  },
+  "homepage": "https://github.com/nijova/react-node-yugabyte-template#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "yugabyte": "^1.0.4"
+  }
+}
