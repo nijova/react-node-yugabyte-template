@@ -7,6 +7,10 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 const port = 3000;
 
+app.get('/', (req, res) => {
+  res.send('get all');
+})
+
 app.get('/:id', (req, res) => {
   res.send('get this id: ' + req.params.id);
 })
