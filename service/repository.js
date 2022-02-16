@@ -1,3 +1,7 @@
 const ycql = require('yugabyte').YSQL;
 
-exports.ycql = ycql;
+class Driver {
+  a = 123;
+}
+
+exports.driver = Driver;

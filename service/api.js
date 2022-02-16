@@ -3,6 +3,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const yugabyte = require('./repository.js');
 
+console.log(new yugabyte.driver())
+
 const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
