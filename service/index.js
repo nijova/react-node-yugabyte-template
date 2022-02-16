@@ -1,1 +1,1 @@
-const api = require('./api.js');
+const api = require('./api');
