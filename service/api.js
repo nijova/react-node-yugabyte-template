@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const conn = require('../api.json');
 const yugabyte = require('./repository.js');
 
 console.log(new yugabyte.driver())
@@ -8,7 +9,6 @@ console.log(new yugabyte.driver())
 const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
-const port = 3000;
 
 app.get('/', (req, res) => {
   res.send('get all');
@@ -31,6 +31,6 @@ app.delete('/:id', (req, res) => {
   res.send('delete this id: ' + req.params.id);
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+app.listen(conn.port, () => {
+  console.log(`Service listening on port ${conn.port}`);
 })
