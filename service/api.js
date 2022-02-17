@@ -15,7 +15,7 @@ app.get('/:table', (req, res) => {
 })
 
 app.get('/:table/:id', (req, res) => {
-  res.send('get this id: ' + req.params.id);
+  driver.selectById(req.params.table, req.params.id, res);
 })
 
 app.post('/:table/:id', (req, res) => {

@@ -12,8 +12,16 @@ class Driver {
   };
 
   selectAll = (table, res) => {
-    const select = `SELECT * FROM ${this.keyspace}.${table};`;
-    this.client.execute(select, function (err, result) {
+    const query = `SELECT * FROM ${this.keyspace}.${table};`;
+    this.client.execute(query, function (err, result) {
+      if (err) {console.log(err);}
+      res.json(result.rows);
+    });
+  }
+
+  selectById = (table, id, res) => {
+    const query = `SELECT * FROM ${this.keyspace}.${table} WHERE id=${id};`;
+    this.client.execute(query, function (err, result) {
       if (err) {console.log(err);}
       res.json(result.rows);
     });
