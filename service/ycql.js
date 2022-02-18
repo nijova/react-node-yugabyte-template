@@ -27,7 +27,17 @@ class Driver {
     });
   }
 
-  deleteById = (table, id, res) => {
+  create = (table, body, res) => {
+    const query = `INSERT INTO ${this.keyspace}.${table} (${Object.keys(body).join(',')}) 
+      VALUES (${Object.values(body).join(', ')});`;
+    this.client.execute(query, function (err, result) {
+      if (err) {console.log(err);}
+      res.status(201);
+      res.json(result);
+    });
+  }
+
+  removeById = (table, id, res) => {
     const query = `DELETE FROM ${this.keyspace}.${table} WHERE id=${id};`;
     this.client.execute(query, function (err, result) {
       if (err) {console.log(err);}

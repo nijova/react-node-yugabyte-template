@@ -18,9 +18,8 @@ app.get('/:table/:id', (req, res) => {
   driver.selectById(req.params.table, req.params.id, res);
 })
 
-app.post('/:table/:id', (req, res) => {
-  console.log('got this body: ' + req.body);
-  res.send('post this id: ' + req.params.id);
+app.post('/:table', (req, res) => {
+  driver.create(req.params.table, req.body, res);
 })
 
 app.patch('/:table/:id', (req, res) => {
@@ -28,7 +27,7 @@ app.patch('/:table/:id', (req, res) => {
 })
 
 app.delete('/:table/:id', (req, res) => {
-  driver.deleteById(req.params.table, req.params.id, res);
+  driver.removeById(req.params.table, req.params.id, res);
 })
 
 app.listen(conn.port, () => {
