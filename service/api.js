@@ -23,6 +23,7 @@ app.post('/:table', (req, res) => {
 })
 
 app.patch('/:table/:id', (req, res) => {
+  driver.update(req.params.table, req.params.id, req.body, res);
   res.send('patch this id: ' + req.params.id);
 })
 
