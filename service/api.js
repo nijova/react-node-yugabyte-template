@@ -28,7 +28,7 @@ app.patch('/:table/:id', (req, res) => {
 })
 
 app.delete('/:table/:id', (req, res) => {
-  res.send('delete this id: ' + req.params.id);
+  driver.deleteById(req.params.table, req.params.id, res);
 })
 
 app.listen(conn.port, () => {

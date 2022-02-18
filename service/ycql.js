@@ -23,7 +23,16 @@ class Driver {
     const query = `SELECT * FROM ${this.keyspace}.${table} WHERE id=${id};`;
     this.client.execute(query, function (err, result) {
       if (err) {console.log(err);}
-      res.json(result.rows);
+      res.json(result.rows[0]);
+    });
+  }
+
+  deleteById = (table, id, res) => {
+    const query = `DELETE FROM ${this.keyspace}.${table} WHERE id=${id};`;
+    this.client.execute(query, function (err, result) {
+      if (err) {console.log(err);}
+      res.status(200);
+      res.send(id);
     });
   }
 
