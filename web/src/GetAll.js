@@ -14,7 +14,7 @@ class GetAll extends React.Component {
         </h3>
         <button onClick={this.getAllData}>get all</button>
         <div>
-          {this.props.result}
+          {this.props.getAllResponse}
         </div>
       </div>
     );

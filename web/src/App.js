@@ -5,17 +5,22 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      getAllResponse: []
+      getAllResponse: ''
     };
+    
+    this.getAllCb = this.getAllCb.bind(this);
   }
 
   getAllCb (res) {
-    // console.log(res);
+    let getAllResponseString = '';
     if (res.status === 200) {
-      console.log(JSON.stringify(res.data))
+      getAllResponseString = JSON.stringify(res.data);
     } else {
-      //error
+      getAllResponseString = 'An error occured.';
     }
+    this.setState({
+      getAllResponse: getAllResponseString
+    })
   }
 
   render() {
@@ -28,7 +33,7 @@ class App extends React.Component {
           <i>source code <a href="https://github.com/nijova/react-node-yugabyte-template" 
             target="_blank" rel="noreferrer">here</a>.</i>
         </div>
-        <GetAll getAllCb={this.getAllCb}/>
+        <GetAll getAllResponse={this.state.getAllResponse} getAllCb={this.getAllCb}/>
       </div>
     );
   }
