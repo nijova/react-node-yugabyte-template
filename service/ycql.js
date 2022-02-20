@@ -14,7 +14,7 @@ class Driver {
   selectAll = (table, res) => {
     const query = `SELECT * FROM ${this.keyspace}.${table};`;
     this.client.execute(query, function (err, result) {
-      if (err) {respondWithError(err, res);}
+      if (err) {console.log(err);} 
       else {
         res.json(result.rows);
       }
@@ -24,7 +24,7 @@ class Driver {
   selectById = (table, id, res) => {
     const query = `SELECT * FROM ${this.keyspace}.${table} WHERE id=${id};`;
     this.client.execute(query, function (err, result) {
-      if (err) {respondWithError(err, res);}
+      if (err) {console.log(err);}
       else {
         res.json(result.rows[0]);
       }
@@ -35,7 +35,7 @@ class Driver {
     const query = `INSERT INTO ${this.keyspace}.${table} (${Object.keys(data).join(',')}) 
       VALUES (${Object.values(data).join(', ')});`;
     this.client.execute(query, function (err, result) {
-      if (err) {respondWithError(err, res);}
+      if (err) {console.log(err);}
       else {
         res.status(200);
         res.json(result);
@@ -46,7 +46,7 @@ class Driver {
   update = (table, id, data, res) => {
     const query = `UPDATE ${this.keyspace}.${table} SET ${data.key} = ${data.value} WHERE id=${id};`;
     this.client.execute(query, function (err, result) {
-      if (err) {respondWithError(err, res);}
+      if (err) {console.log(err);}
       else {
         res.status(201);
         res.json(result);
@@ -57,20 +57,14 @@ class Driver {
   removeById = (table, id, res) => {
     const query = `DELETE FROM ${this.keyspace}.${table} WHERE id=${id};`;
     this.client.execute(query, function (err, result) {
-      if (err) {respondWithError(err, res);}
+      if (err) {console.log(err);}
       else {
         res.status(200);
         res.send(id);
       }
     });
   }
-
-  respondWithError = (err, res) => {
-    console.log(err);
-    res.status(400);
-    res.send(err);
-  }
-
+  
 };
 
 exports.driver = Driver;
